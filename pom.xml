@@ -1,50 +1,33 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>myapp</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>maven-example</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>myapp</name>
-    <url>http://maven.apache.org</url>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version> <!-- Use a newer version of the plugin -->
-            <configuration>
-                <source>21</source> <!-- Specify Java 21 as source -->
-                <target>21</target> <!-- Specify Java 21 as target -->
-                <encoding>UTF-8</encoding> <!-- Ensure UTF-8 encoding -->
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-
-
-    <!-- Optional Jenkins Build Profile -->
-    <profiles>
-        <profile>
-            <id>jenkins</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <skipTests>false</skipTests> <!-- Jenkins might want to skip tests for faster builds -->
-            </properties>
-        </profile>
-    </profiles>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
-
